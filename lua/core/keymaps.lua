@@ -76,3 +76,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Это стандартная настройка, но если у тебя другой leader, замените 'space' на свой
 vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.format({ async = true })<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<M-k>', ':resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<M-j>', ':resize -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<M-l>', ':vertical resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<M-h>', ':vertical resize -2<CR>', { noremap = true, silent = true })
+
+----------------------------------------------------------------------------------
+--Открыть папку с файлом в системе
+vim.api.nvim_set_keymap('n', '<C-o>', ':lua vim.fn.system("xdg-open " .. vim.fn.expand("%:p:h"))<CR>', { noremap = true, silent = true })
