@@ -43,11 +43,11 @@ return {
 
   -- *** --
 
-  'dracula/vim',
-  as = 'dracula',
-  config = function()
-    vim.cmd [[colorscheme dracula]]
-  end,
+  -- 'dracula/vim',
+  -- as = 'dracula',
+  -- config = function()
+  --   vim.cmd [[colorscheme dracula]]
+  -- end,
 
   -- *** --
 
@@ -71,4 +71,42 @@ return {
   --   -- Пример дополнительных настроек
   --   vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
   -- end,
+  --
+  --
+
+  -- *** --
+
+  'EdenEast/nightfox.nvim',
+  config = function()
+    require('nightfox').setup {
+      options = {
+        -- Пример дополнительных настроек
+        styles = {
+          comments = 'italic',
+          keywords = 'bold',
+          functions = 'italic,bold',
+        },
+      },
+    }
+    vim.cmd 'colorscheme carbonfox'
+  end,
+
+  -- *** --
+
+  -- 'EdenEast/nightfox.nvim',
+  -- config = function()
+  --   require('nightfox').setup {
+  --     options = {
+  --       -- Пример настроек стилей
+  --       styles = {
+  --         comments = 'italic',
+  --         keywords = 'bold',
+  --         types = 'italic,bold',
+  --       },
+  --     },
+  --   }
+  --   vim.cmd 'colorscheme terafox'
+  -- end,
+
+  -- *** --
 }
